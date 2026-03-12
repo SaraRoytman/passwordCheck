@@ -19,14 +19,11 @@ public class passgen {
                 feedback.append("where are the mini letters?");
             }
 
-
             if (!input.matches(".*[A-Z].*")) {
                 feedback.append("no big letters?");
             }
 
         }
-
-
 
         if(feedback.length() == 0) {
             return "Perfecto!";
