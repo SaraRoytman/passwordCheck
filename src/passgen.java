@@ -12,15 +12,15 @@ public class passgen {
         }
         else {
             if (!input.matches(".*[0-9].*")) {
-                feedback.append("you need to add numbers!");
+                feedback.append("add numbers!");
             }
 
             if (!input.matches(".*[a-z].*")) {
-                feedback.append("where are the mini letters?");
+                feedback.append("mini letters!!");
             }
 
             if (!input.matches(".*[A-Z].*")) {
-                feedback.append("no big letters?");
+                feedback.append("BIG LETTERS!!");
             }
 
         }
