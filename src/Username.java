@@ -3,8 +3,18 @@ public class Username {
         if(userName1 == null || userName1.isEmpty()){
             return "cant be empty!";
         }
-        return "fineee";
+        StringBuilder feedback = new StringBuilder();
+        if(userName1.length() < 8){
+            feedback.append("too short!");
 
+        }
+        else{
+            feedback.append("Perfect!");
+
+        }
+
+
+        return feedback.toString();
     }
 
 }
