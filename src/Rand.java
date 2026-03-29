@@ -31,7 +31,7 @@ public class Rand {
         passLabel.setBounds(20, 140, 100, 25);
         frame.add(passLabel);
 
-        JTextField passField = new JTextField();
+        JPasswordField passField = new JPasswordField();
         passField.setBounds(120, 140, 150, 25);
         frame.add(passField);
 
@@ -46,17 +46,25 @@ public class Rand {
 
         button.addActionListener(e -> {
             String userIn = userField.getText();
-            String passIn = passField.getText();
+            String passIn = new String(passField.getPassword());
 
-            String userRes = userChecker.valid(userIn);
-            String passRes = passChecker.generate(passIn);
+            String userRes = userChecker.valid(userIn).trim();
+            String passRes = passChecker.generate(passIn).trim();
 
-            if (userRes.equals("OK") && passRes.equals("Perfecto!")) {
+            if (userRes.equalsIgnoreCase("OK") && passRes.equalsIgnoreCase("Perfecto!")) {
+                textArea.setForeground(new Color(0, 128, 0));
                 textArea.setText("Success! Welcome " + userIn);
             } else {
+
                 StringBuilder errors = new StringBuilder();
-                if (!userRes.equals("OK")) errors.append("User: ").append(userRes).append("\n");
-                if (!passRes.equals("Perfecto!")) errors.append("Pass: ").append(passRes);
+
+                if (!userRes.equalsIgnoreCase("OK")) {
+                    errors.append("User: ").append(userRes).append("\n");
+                }
+                if (!passRes.equalsIgnoreCase("Perfecto!")) {
+                    errors.append("Password: ").append(passRes);
+                }
+
                 textArea.setText(errors.toString());
             }
         });
