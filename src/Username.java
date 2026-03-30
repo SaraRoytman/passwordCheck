@@ -9,7 +9,7 @@ public class Username {
 
         }
         else{
-            feedback.append("Perfect!");
+            feedback.append("OK");
 
         }
 

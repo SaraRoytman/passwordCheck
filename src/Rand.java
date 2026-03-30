@@ -5,7 +5,7 @@ public class Rand {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Pass");
         frame.setSize(450, 450);
-        frame.getContentPane().setBackground(new Color(223, 104, 208));
+        frame.getContentPane().setBackground(new Color(209, 120, 197));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
         frame.setLocationRelativeTo(null);
@@ -16,7 +16,7 @@ public class Rand {
         textArea.setWrapStyleWord(true);
         textArea.setEditable(false);
         textArea.setOpaque(false);
-        textArea.setFont(new Font("Arial", Font.BOLD, 18));
+        textArea.setFont(new Font("Verdana", Font.BOLD, 18));
         frame.add(textArea);
 
         JLabel userLabel = new JLabel("username:");
@@ -55,7 +55,7 @@ public class Rand {
                 textArea.setForeground(new Color(0, 128, 0));
                 textArea.setText("Success! Welcome " + userIn);
             } else {
-
+                textArea.setForeground(Color.RED);
                 StringBuilder errors = new StringBuilder();
 
                 if (!userRes.equalsIgnoreCase("OK")) {
@@ -67,6 +67,8 @@ public class Rand {
 
                 textArea.setText(errors.toString());
             }
+            textArea.revalidate();
+            textArea.repaint();
         });
 
         frame.setVisible(true);
