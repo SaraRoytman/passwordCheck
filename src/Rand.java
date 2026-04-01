@@ -4,7 +4,7 @@ import java.awt.*;
 public class Rand {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Pass");
-        frame.setSize(450, 450);
+        frame.setSize(450, 350);
         frame.getContentPane().setBackground(new Color(209, 120, 197));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
