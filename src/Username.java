@@ -20,8 +20,6 @@ public class Username {
             feedback.append("OK");
 
         }
-
-
         return feedback.toString();
     }
 
