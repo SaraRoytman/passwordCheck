@@ -2,7 +2,6 @@ import java.sql.*;
 
 public class Username {
 
-
     public String valid(String userName1) {
         if (userName1 == null || userName1.isEmpty()) {
             return "cant be empty!";
@@ -20,23 +19,19 @@ public class Username {
             feedback.append("small letters! ");
         }
 
-
         if (feedback.length() == 0) {
             if (isUsernameTaken(userName1)) {
                 return "Username already taken!";
             }
             return "OK";
         }
-
         return feedback.toString();
     }
 
-    // פונקציה חדשה שבודקת מול MySQL אם השם קיים
     private boolean isUsernameTaken(String user) {
-        // השאילתה בודקת כמה שורות יש עם השם הזה
+
         String sql = "SELECT COUNT(*) FROM users WHERE username = ?";
 
-        // שימוש ב-DB.getConnection() מהקובץ שיצרנו קודם
         try (Connection conn = DB.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
@@ -44,7 +39,6 @@ public class Username {
             ResultSet rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                // אם המספר גדול מ-0, סימן שיש כבר משתמש כזה
                 return rs.getInt(1) > 0;
             }
         } catch (SQLException e) {

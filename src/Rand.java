@@ -20,7 +20,7 @@ public class Rand {
         textArea.setFont(new Font("Verdana", Font.BOLD, 18));
         frame.add(textArea);
 
-        // --- שדות הקלט ---
+
         JLabel userLabel = new JLabel("username:");
         userLabel.setBounds(20, 110, 100, 25);
         frame.add(userLabel);
@@ -43,7 +43,7 @@ public class Rand {
         button.setForeground(new Color(176, 120, 191));
         frame.add(button);
 
-        // אובייקטים לבדיקה
+
         passgen passChecker = new passgen();
         Username userChecker = new Username();
 
@@ -51,14 +51,11 @@ public class Rand {
             String userIn = userField.getText().trim();
             String passIn = new String(passField.getPassword());
 
-            // קבלת תוצאות הבדיקה
             String userRes = userChecker.valid(userIn);
             String passRes = passChecker.generate(passIn);
 
-            // בדיקה אם הכל תקין
             if (userRes.equals("OK") && passRes.equals("Perfecto!")) {
 
-                // --- שלב השמירה ב-MySQL ---
                 if (saveUserToDB(userIn, passIn)) {
                     textArea.setForeground(new Color(0, 100, 0)); // ירוק כהה
                     textArea.setText("Success! Registered: " + userIn);
@@ -68,7 +65,7 @@ public class Rand {
                 }
 
             } else {
-                // הצגת שגיאות
+
                 textArea.setForeground(Color.RED);
                 StringBuilder errors = new StringBuilder();
 
@@ -82,7 +79,6 @@ public class Rand {
         frame.setVisible(true);
     }
 
-    // פונקציה עזר לשמירת המשתמש בבסיס הנתונים
     public static boolean saveUserToDB(String user, String pass) {
         String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
         try (Connection conn = DB.getConnection();
