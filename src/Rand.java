@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.sql.*; // הוספנו לטובת עבודה עם SQL
+import java.sql.*;
 
 public class Rand {
     public static void main(String[] args) {
@@ -44,7 +44,7 @@ public class Rand {
         frame.add(button);
 
 
-        passgen passChecker = new passgen();
+        Pass passChecker = new Pass();
         Username userChecker = new Username();
 
         button.addActionListener(e -> {
@@ -60,7 +60,7 @@ public class Rand {
                     textArea.setForeground(new Color(0, 100, 0)); // ירוק כהה
                     textArea.setText("Success! Registered: " + userIn);
                 } else {
-                    textArea.setForeground(Color.RED);
+                    textArea.setForeground(new Color(124, 22, 33));
                     textArea.setText("Database Error: Could not save user.");
                 }
 

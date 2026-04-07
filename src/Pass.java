@@ -1,4 +1,4 @@
-public class passgen {
+public class Pass {
     public String generate(String input) {
         if (input == null || input.isEmpty()) {
             return "Please enter something!";
