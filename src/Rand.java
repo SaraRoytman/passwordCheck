@@ -6,7 +6,7 @@ public class Rand {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Pass System");
         frame.setSize(450, 400); // הגבהנו מעט כדי שיהיה מקום לטקסט
-        frame.getContentPane().setBackground(new Color(209, 120, 197));
+        frame.getContentPane().setBackground(new Color(220, 153, 182));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
         frame.setLocationRelativeTo(null);
@@ -40,7 +40,7 @@ public class Rand {
         JButton button = new JButton("Click");
         button.setBounds(120, 200, 100, 30);
         button.setBackground(new Color(6, 19, 8));
-        button.setForeground(new Color(176, 120, 191));
+        button.setForeground(new Color(171, 91, 126));
         frame.add(button);
 
 
@@ -60,7 +60,7 @@ public class Rand {
                     textArea.setForeground(new Color(0, 100, 0)); // ירוק כהה
                     textArea.setText("Success! Registered: " + userIn);
                 } else {
-                    textArea.setForeground(new Color(124, 22, 33));
+                    textArea.setForeground(new Color(101, 17, 26));
                     textArea.setText("Database Error: Could not save user.");
                 }
 
