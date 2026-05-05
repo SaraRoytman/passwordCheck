@@ -11,7 +11,7 @@ public class Rand {
         frame.setLayout(null);
         frame.setLocationRelativeTo(null);
 
-        JTextArea textArea = new JTextArea("Enter a username & password:");
+        JTextArea textArea = new JTextArea("Enter username && password:");
         textArea.setBounds(20, 20, 400, 80);
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
